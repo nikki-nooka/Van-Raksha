@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VanRaksha - AI Environmental Guardian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #020617; /* Darker bg for intro */
+      }
+
+      /* --- MYSTICAL FOREST JOURNEY INTRO --- */
+      @keyframes zoom-in-scene {
+          from { transform: scale(1); }
+          to { transform: scale(1.15); }
+      }
+      @keyframes parallax-fore {
+          from { transform: translateX(0); }
+          to { transform: translateX(-15%); }
+      }
+      @keyframes parallax-mid {
+          from { transform: translateX(0); }
+          to { transform: translateX(-10%); }
+      }
+      @keyframes parallax-back {
+          from { transform: translateX(0); }
+          to { transform: translateX(-5%); }
+      }
+      @keyframes float-spores {
+          from { transform: translateY(0) rotate(0deg); opacity: 1; }
+          to { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+      }
+      @keyframes star-twinkle {
+          from { opacity: 0.2; transform: scale(0.8); }
+          to { opacity: 0.8; transform: scale(1); }
+      }
+      @keyframes title-glow-fade-in {
+          from { opacity: 0; filter: blur(15px) drop-shadow(0 0 50px #6ee7b7); transform: scale(0.9); }
+          to { opacity: 1; filter: blur(0) drop-shadow(0 0 15px #6ee7b7); transform: scale(1); }
+      }
+      
+      /* --- CORE APP ANIMATIONS --- */
+      .animate-fade-in-app { animation: fadeInApp 1s ease-out forwards; }
+      @keyframes fadeInApp { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+
+      /* --- IMAGE DECONSTRUCTION ANALYSIS ANIMATION --- */
+      @keyframes scan-grid-lines { from { background-position: 0 0; } to { background-position: 50px 50px; } }
+      @keyframes image-dissolve { from { mask-position: 0% 0%; } to { mask-position: 100% 100%; } }
+      @keyframes core-pulse-strong { 0%, 100% { transform: scale(0.95); box-shadow: 0 0 15px 5px #34d399; } 50% { transform: scale(1.05); box-shadow: 0 0 25px 10px #6ee7b7; } }
+      
+      /* --- DATA MATERIALIZATION RESULT ANIMATION --- */
+      @keyframes materialize-card {
+        0% { opacity: 0; transform: translateY(20px); filter: blur(5px); clip-path: inset(50% 50% 50% 50%); }
+        60% { opacity: 1; transform: translateY(0); filter: blur(5px); clip-path: inset(0% 0% 0% 0%); }
+        100% { opacity: 1; filter: blur(0); }
+      }
+      .animate-materialize { animation: materialize-card 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+
+      /* --- ADVANCED CALAMITY ANIMATIONS --- */
+      @keyframes earthquake-shake-violent {
+        0%, 100% { transform: translate(0, 0); }
+        10%, 90% { transform: translate(-10px, 6px) rotate(-1deg); }
+        20%, 80% { transform: translate(10px, -6px) rotate(1deg); }
+        30%, 50%, 70% { transform: translate(-10px, -8px) rotate(2deg); }
+        40%, 60% { transform: translate(10px, 10px) rotate(-2deg); }
+      }
+      @keyframes screen-crack-anim { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+      
+      /* New Flood Animation */
+      @keyframes flood-surge { from { transform: translateY(100%); } to { transform: translateY(0%); } }
+      @keyframes wave-move { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+      @keyframes debris-float { from { transform: translateX(200px) rotate(0deg); } to { transform: translateX(-200px) rotate(360deg); } }
+
+      /* New Fire Animation */
+      @keyframes inferno-flicker { 0%, 100% { opacity: 0.9; transform: scale(1.02); } 50% { opacity: 1; transform: scale(1); } }
+      @keyframes ember-storm { from { transform: translateY(0) rotate(0); opacity: 1; } to { transform: translateY(-120vh) rotate(360deg); opacity: 0; } }
+      
+      @keyframes tornado-chaos-spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      @keyframes volcano-erupt-shake {
+         0%, 100% { transform: translate(0, 0); } 25% { transform: translate(2px, -3px); } 50% { transform: translate(-3px, 2px); } 75% { transform: translate(3px, 3px); }
+      }
+      @keyframes lava-bomb-arc { from { transform: translateY(0) scale(1); opacity: 1; } to { transform: translateY(-80vh) scale(0.3); opacity: 0; } }
+
+      @keyframes landslide-tumble { from { transform: translateY(-150%) rotate(-30deg); } to { transform: translateY(150%) rotate(30deg); } }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0-rc.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0-rc.0/client",
+    "@google/genai": "https://esm.sh/@google/genai@^1.8.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-100 transition-colors duration-1000">
+    <div id="root"></div>
+    <svg width="0" height="0" class="absolute">
+        <defs>
+            <filter id="heat-distortion">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.1" numOctaves="3" result="turbulence" seed="0">
+                    <animate attributeName="baseFrequency" dur="80ms" keyTimes="0;0.5;1" values="0.01 0.1;0.02 0.2;0.01 0.1" repeatCount="indefinite"></animate>
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="15" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+            </filter>
+        </defs>
+    </svg>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

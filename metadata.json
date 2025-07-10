@@ -1,0 +1,6 @@
+{
+  "name": "VanRaksha",
+  "description": "An AI-powered environmental guardian. VanRaksha analyzes satellite and ground-level imagery to detect natural threats like wildfires and floods, providing detailed reports on causes, potential impact, and crucial safety precautions.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
